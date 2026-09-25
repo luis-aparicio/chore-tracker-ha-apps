@@ -1,0 +1,27 @@
+# https://developers.home-assistant.io/docs/apps/configuration#app-configuration
+name: Chore Tracker
+version: edge
+slug: chore_tracker
+description: Household chore tracker with ingress panel and persistent /data storage.
+url: https://github.com/luis-aparicio/chore-tracker-ha-apps/tree/main/chore_tracker
+arch:
+  - amd64
+  - aarch64
+init: false
+ingress: true
+ingress_port: 8080
+panel_icon: mdi:checkbox-marked-outline
+panel_title: Chore Tracker
+hassio_api: true
+apparmor: true
+map:
+  - type: data
+    read_only: false
+environment:
+  CHORE_TRACKER_CONFIG: /data/options.json
+options:
+  logLevel: info
+schema:
+  logLevel: list(debug|info|warn|error)
+image: ghcr.io/luis-aparicio/chore-tracker
+legacy: false
