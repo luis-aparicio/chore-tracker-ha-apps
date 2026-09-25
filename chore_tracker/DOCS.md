@@ -34,6 +34,21 @@ inside the container if you set them.
 SQLite and backups live under `/data` (Supervisor app data). Restarts and app
 upgrades keep that volume. A cold backup of the app includes `/data`.
 
+The published image entrypoint starts as root, fixes ownership of Supervisor’s
+root-owned `/data` / `options.json`, then drops to the `node` user before the
+server process runs.
+
+## Legacy mode
+
+`config.yaml` currently sets `legacy: true` so Supervisor accepts the image
+before `io.hass.*` labels land on the published `:edge` tag. After
+`luis-aparicio/chore-tracker` main publishes a labeled multi-arch image, flip
+`legacy` to `false` in a small follow-up.
+
+## Sidebar
+
+`panel_admin: false` so non-admin household members can open the ingress panel.
+
 ## Source and licence
 
 - Application source: https://github.com/luis-aparicio/chore-tracker

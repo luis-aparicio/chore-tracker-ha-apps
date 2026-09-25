@@ -12,6 +12,7 @@ ingress: true
 ingress_port: 8080
 panel_icon: mdi:checkbox-marked-outline
 panel_title: Chore Tracker
+panel_admin: false
 hassio_api: true
 apparmor: true
 map:
@@ -24,4 +25,7 @@ options:
 schema:
   logLevel: list(debug|info|warn|error)
 image: ghcr.io/luis-aparicio/chore-tracker
-legacy: false
+# TODO: flip to legacy: false after main publishes an image with io.hass.* labels
+# (chore-tracker Dockerfile ARG IO_HASS_VERSION + LABEL). Keep true so current
+# unlabeled :edge still installs under Supervisor.
+legacy: true
