@@ -6,6 +6,11 @@ profile chore_tracker flags=(attach_disconnected,mediate_deleted) {
   #include <abstractions/nameservice>
 
   # Capabilities
+  # Entrypoint chowns Supervisor-owned /data then setpriv-drops to node.
+  capability chown,
+  capability fowner,
+  capability setuid,
+  capability setgid,
   network,
   file,
   signal (send) set=(kill,term,int,hup,cont),
@@ -39,6 +44,7 @@ profile chore_tracker flags=(attach_disconnected,mediate_deleted) {
   /usr/share/zoneinfo/** r,
 
   # Supervisor options and persistent state
+  /data/ rw,
   /data/** rw,
 
   # Node / V8 scratch, entropy, and typical self/cgroup probes
