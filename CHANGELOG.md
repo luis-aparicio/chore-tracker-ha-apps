@@ -2,6 +2,8 @@
 
 ## edge
 
+- Declare `discovery: [chore_tracker]` so Supervisor accepts the app’s discovery POST
+  (main repo #18). End-to-end zero-touch setup still needs the HACS integration.
 - Initial app repository scaffold: `repository.yaml`, `chore_tracker/` config,
   AppArmor profile, docs, and placeholder icon/logo.
 - Points at `ghcr.io/luis-aparicio/chore-tracker:edge` with ingress on port 8080.

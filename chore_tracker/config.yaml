@@ -14,6 +14,8 @@ panel_icon: mdi:checkbox-marked-outline
 panel_title: Chore Tracker
 panel_admin: false
 hassio_api: true
+discovery:
+  - chore_tracker
 apparmor: true
 map:
   - type: data

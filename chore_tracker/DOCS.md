@@ -49,6 +49,14 @@ before `io.hass.*` labels land on the published `:edge` tag. After
 
 `panel_admin: false` so non-admin household members can open the ingress panel.
 
+## Supervisor discovery
+
+`config.yaml` lists `discovery: [chore_tracker]`. When the app image is running with a
+Supervisor-injected `SUPERVISOR_TOKEN`, the server POSTs a discovery message
+(`service: chore_tracker`, config host/port/token) so a future Home Assistant integration
+can pick it up. This packaging change only declares the service name Supervisor expects;
+zero-touch config flow still depends on the integration (#21 in the main repo).
+
 ## Source and licence
 
 - Application source: https://github.com/luis-aparicio/chore-tracker
