@@ -29,6 +29,21 @@ Other server settings use image defaults (`CHORE_TRACKER_DATA_DIR=/data`,
 port `8080` for ingress). Environment variables still override the options file
 inside the container if you set them.
 
+## Standalone browser access (local network)
+
+The app listens on container port `8080`. By default Supervisor also maps that to
+host port **8124** so household members can open the UI without an HA account:
+
+`http://homeassistant.local:8124` (or your HA host’s LAN IP)
+
+Sign-in uses Chore Tracker usernames/passwords and invite links — not Home
+Assistant ingress SSO. Copy invites from this direct URL so links stay on the
+standalone origin.
+
+To turn direct access off: **Settings → Apps → Chore Tracker → Configuration →
+Network** and disable / clear the `8080/tcp` host port (ingress sidebar still
+works). This mapping is for the home LAN; it is not a remote-access setup.
+
 ## Persistence
 
 SQLite and backups live under `/data` (Supervisor app data). Restarts and app

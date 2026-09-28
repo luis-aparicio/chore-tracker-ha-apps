@@ -2,6 +2,9 @@
 
 ## edge
 
+- Map container `8080/tcp` to host port **8124** by default for standalone LAN
+  browser access (Chore Tracker login / invites; disable under Network for
+  ingress-only).
 - Declare `discovery: [chore_tracker]` so Supervisor accepts the app’s discovery POST
   (main repo #18). End-to-end zero-touch setup still needs the HACS integration.
 - Initial app repository scaffold: `repository.yaml`, `chore_tracker/` config,

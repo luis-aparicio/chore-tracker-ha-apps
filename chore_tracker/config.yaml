@@ -10,6 +10,12 @@ arch:
 init: false
 ingress: true
 ingress_port: 8080
+# Optional host port for standalone browser access on the LAN (no HA login).
+# Disable under Configuration → Network to use ingress only.
+ports:
+  8080/tcp: 8124
+ports_description:
+  8080/tcp: Standalone web UI on the local network (Chore Tracker login / invites)
 panel_icon: mdi:checkbox-marked-outline
 panel_title: Chore Tracker
 panel_admin: false
