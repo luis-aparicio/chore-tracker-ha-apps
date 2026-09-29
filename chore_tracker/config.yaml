@@ -28,10 +28,15 @@ map:
     read_only: false
 environment:
   CHORE_TRACKER_CONFIG: /data/options.json
+  # LAN host port and HA ingress are HTTP; Secure cookies would not stick in the browser.
+  # Set true (or toggle the option) if you terminate TLS in front of the app.
+  CHORE_TRACKER_COOKIE_SECURE: 'false'
 options:
   logLevel: info
+  cookieSecure: false
 schema:
   logLevel: list(debug|info|warn|error)
+  cookieSecure: bool
 image: ghcr.io/luis-aparicio/chore-tracker
 # TODO: flip to legacy: false after main publishes an image with io.hass.* labels
 # (chore-tracker Dockerfile ARG IO_HASS_VERSION + LABEL). Keep true so current

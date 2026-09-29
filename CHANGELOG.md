@@ -2,6 +2,9 @@
 
 ## edge
 
+- Default `CHORE_TRACKER_COOKIE_SECURE=false` (and `cookieSecure` option) so
+  session cookies work on HTTP LAN port 8124 and HA ingress. Turn on only when
+  serving the app over HTTPS.
 - Map container `8080/tcp` to host port **8124** by default for standalone LAN
   browser access (Chore Tracker login / invites; disable under Network for
   ingress-only).

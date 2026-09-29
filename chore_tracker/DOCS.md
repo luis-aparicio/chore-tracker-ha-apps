@@ -24,6 +24,7 @@ Or use the My Home Assistant link from the repository README.
 | Option | Default | Description |
 |---|---|---|
 | `logLevel` | `info` | Server log verbosity (`debug` / `info` / `warn` / `error`). Written to `/data/options.json` and loaded via `CHORE_TRACKER_CONFIG`. |
+| `cookieSecure` | `false` | Session cookie `Secure` flag. Leave off for HTTP LAN / ingress; turn on only if browsers reach the app over HTTPS. |
 
 Other server settings use image defaults (`CHORE_TRACKER_DATA_DIR=/data`,
 port `8080` for ingress). Environment variables still override the options file
