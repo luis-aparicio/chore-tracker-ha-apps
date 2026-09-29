@@ -7,10 +7,13 @@ profile chore_tracker flags=(attach_disconnected,mediate_deleted) {
 
   # Capabilities
   # Entrypoint chowns Supervisor-owned /data then setpriv-drops to node.
+  # dac_override / dac_read_search: root-owned 0700 /data from Supervisor.
   capability chown,
   capability fowner,
   capability setuid,
   capability setgid,
+  capability dac_override,
+  capability dac_read_search,
   network,
   file,
   signal (send) set=(kill,term,int,hup,cont),

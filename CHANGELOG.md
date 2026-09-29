@@ -1,12 +1,10 @@
 # Changelog
 
-## sha-646ea4f
-
-- Temporary pin to `ghcr.io/luis-aparicio/chore-tracker:sha-646ea4f` so HA OS
-  can update past a cached `:edge` and pick up the Secure-cookie fix for HTTP.
-
 ## edge
 
+- Disable AppArmor for now: labeled images were crash-looping on
+  `chown: cannot read directory '/data': Permission denied`. Profile also gains
+  `dac_override` / `dac_read_search` for when AppArmor is re-enabled.
 - Default `CHORE_TRACKER_COOKIE_SECURE=false` (and `cookieSecure` option) so
   session cookies work on HTTP LAN port 8124 and HA ingress. Turn on only when
   serving the app over HTTPS.

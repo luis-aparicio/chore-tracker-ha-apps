@@ -1,8 +1,8 @@
 # https://developers.home-assistant.io/docs/apps/configuration#app-configuration
 name: Chore Tracker
-# Pin to image with HA HTTP cookie fix (SUPERVISOR_TOKEN ⇒ cookieSecure false).
-# Flip back to `edge` after dogfood once floating :edge is confirmed pulled.
-version: sha-646ea4f
+# Same cookie-fixed image as sha-646ea4f; version bump forces Supervisor to apply
+# config changes (AppArmor off until profile allows entrypoint chown again).
+version: edge
 slug: chore_tracker
 description: Household chore tracker with ingress panel and persistent /data storage.
 url: https://github.com/luis-aparicio/chore-tracker-ha-apps/tree/main/chore_tracker
@@ -24,7 +24,10 @@ panel_admin: false
 hassio_api: true
 discovery:
   - chore_tracker
-apparmor: true
+# Temporary: labeled images enforce the profile and block entrypoint chown of
+# Supervisor-owned /data ("chown: cannot read directory '/data'"). Re-enable
+# after apparmor.txt gains the needed rules / image entrypoint soft-fails.
+apparmor: false
 map:
   - type: data
     read_only: false
