@@ -45,7 +45,3 @@ schema:
   logLevel: list(debug|info|warn|error)
   cookieSecure: bool
 image: ghcr.io/luis-aparicio/chore-tracker
-# TODO: flip to legacy: false after main publishes an image with io.hass.* labels
-# (chore-tracker Dockerfile ARG IO_HASS_VERSION + LABEL). Keep true so current
-# unlabeled :edge still installs under Supervisor.
-legacy: true
