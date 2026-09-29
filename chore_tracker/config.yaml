@@ -1,8 +1,10 @@
 # https://developers.home-assistant.io/docs/apps/configuration#app-configuration
 name: Chore Tracker
-# Same cookie-fixed image as sha-646ea4f; version bump forces Supervisor to apply
-# config changes (AppArmor off until profile allows entrypoint chown again).
-version: edge
+# Image tag to run. Supervisor only offers an Update when this changes, so it pins a
+# commit tag (sha-xxxxxxx) or release (1.2.3), never the moving edge tag. The chore-tracker
+# repo's "Publish image" workflow rewrites this line after each build (bump-ha-app job);
+# edit by hand only if that automation is off.
+version: "sha-529e5a4"
 slug: chore_tracker
 description: Household chore tracker with ingress panel and persistent /data storage.
 url: https://github.com/luis-aparicio/chore-tracker-ha-apps/tree/main/chore_tracker

@@ -27,7 +27,9 @@ persistent `/data`, and Supervisor API access for later discovery work.
 Configures the container with `CHORE_TRACKER_CONFIG=/data/options.json` so
 Supervisor options (currently `logLevel`) feed the server's `loadConfig`.
 
-Image tag tracked by `version` in `chore_tracker/config.yaml` (Phase 3: `edge`).
+Image tag tracked by `version` in `chore_tracker/config.yaml`. It pins a commit tag
+(`sha-xxxxxxx`) so Supervisor offers an Update whenever it changes; the main repo's publish
+workflow updates it after each build (see its `docs/ha-app.md`).
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
