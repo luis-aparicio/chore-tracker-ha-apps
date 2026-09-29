@@ -1,6 +1,8 @@
 # https://developers.home-assistant.io/docs/apps/configuration#app-configuration
 name: Chore Tracker
-version: edge
+# Pin to image with HA HTTP cookie fix (SUPERVISOR_TOKEN ⇒ cookieSecure false).
+# Flip back to `edge` after dogfood once floating :edge is confirmed pulled.
+version: sha-646ea4f
 slug: chore_tracker
 description: Household chore tracker with ingress panel and persistent /data storage.
 url: https://github.com/luis-aparicio/chore-tracker-ha-apps/tree/main/chore_tracker

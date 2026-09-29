@@ -1,5 +1,10 @@
 # Changelog
 
+## sha-646ea4f
+
+- Temporary pin to `ghcr.io/luis-aparicio/chore-tracker:sha-646ea4f` so HA OS
+  can update past a cached `:edge` and pick up the Secure-cookie fix for HTTP.
+
 ## edge
 
 - Default `CHORE_TRACKER_COOKIE_SECURE=false` (and `cookieSecure` option) so
