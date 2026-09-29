@@ -26,10 +26,6 @@ panel_admin: false
 hassio_api: true
 discovery:
   - chore_tracker
-# Temporary: labeled images enforce the profile and block entrypoint chown of
-# Supervisor-owned /data ("chown: cannot read directory '/data'"). Re-enable
-# after apparmor.txt gains the needed rules / image entrypoint soft-fails.
-apparmor: false
 map:
   - type: data
     read_only: false
