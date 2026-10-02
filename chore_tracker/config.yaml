@@ -4,7 +4,7 @@ name: Chore Tracker
 # commit tag (sha-xxxxxxx) or release (1.2.3), never the moving edge tag. The chore-tracker
 # repo's "Publish image" workflow rewrites this line after each build (bump-ha-app job);
 # edit by hand only if that automation is off.
-version: "sha-683cc0d"
+version: "sha-320f744"
 slug: chore_tracker
 description: Household chore tracker with ingress panel and persistent /data storage.
 url: https://github.com/luis-aparicio/chore-tracker-ha-apps/tree/main/chore_tracker
